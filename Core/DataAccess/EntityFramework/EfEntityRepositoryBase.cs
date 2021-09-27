@@ -60,5 +60,7 @@ namespace DipFramework.Core.DataAccess.EntityFramework
                 context.SaveChanges();
             }
         }
+
+      
     }
 }
