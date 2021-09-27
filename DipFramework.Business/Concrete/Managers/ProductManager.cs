@@ -1,4 +1,7 @@
 ﻿using DipFramework.Business.Abstract;
+using DipFramework.Business.CrossCuttingConcerns.Validation.FluentValidation;
+using DipFramework.Business.ValidationRules.FluentValidation;
+using DipFramework.Core.Aspects.PostSharp;
 using DipFramework.DataAccess.EntityFramework.Abstract;
 using DipFramework.Entities.Concrete;
 using System;
@@ -18,6 +21,7 @@ namespace DipFramework.Business.Concrete.Managers
             _productDal = productDal;
         }
 
+        [FluentValidationAspect(typeof(ProductValidator))]
         public void Add(Product product)
         {
             _productDal.Add(product);
@@ -33,5 +37,10 @@ namespace DipFramework.Business.Concrete.Managers
             return _productDal.Get(p => p.ProductId == id);
         }
 
+        [FluentValidationAspect(typeof(ProductValidator))]
+        public void Update(Product product)
+        {
+            _productDal.Update(product);
+        }
     }
 }

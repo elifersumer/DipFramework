@@ -12,5 +12,6 @@ namespace DipFramework.Business.Abstract
         List<Product> GetAll();
         Product GetById(int id);
         void Add(Product product);
+        void Update(Product product);
     }
 }
