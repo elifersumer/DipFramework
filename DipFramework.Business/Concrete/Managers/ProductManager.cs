@@ -2,7 +2,9 @@
 using DipFramework.Business.CrossCuttingConcerns.Validation.FluentValidation;
 using DipFramework.Business.ValidationRules.FluentValidation;
 using DipFramework.Core.Aspects.PostSharp;
+using DipFramework.Core.Aspects.PostSharp.CachingAspects;
 using DipFramework.Core.Aspects.PostSharp.ValidationAspects;
+using DipFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using DipFramework.DataAccess.EntityFramework.Abstract;
 using DipFramework.Entities.Concrete;
 using System;
@@ -23,11 +25,13 @@ namespace DipFramework.Business.Concrete.Managers
         }
 
         [FluentValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect(typeof(MemoryCacheManager))]
         public void Add(Product product)
         {
             _productDal.Add(product);
         }
 
+        [CacheAspect(typeof(MemoryCacheManager))]
         public List<Product> GetAll()
         {
             return _productDal.GetList().ToList();
