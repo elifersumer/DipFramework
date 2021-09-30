@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DipFramework.Core.Aspects.PostSharp
+namespace DipFramework.Core.Aspects.PostSharp.ValidationAspects
 {
     [Serializable]
-    public class FluentValidationAspect:OnMethodBoundaryAspect
+    public class FluentValidationAspect : OnMethodBoundaryAspect
     {
         Type _validatorType;
         public FluentValidationAspect(Type validatorType)
@@ -24,7 +24,7 @@ namespace DipFramework.Core.Aspects.PostSharp
             var entityType = _validatorType.BaseType.GetGenericArguments()[0];
             var entities = args.Arguments.Where(t => t.GetType() == entityType);
 
-            foreach(var entity in entities)
+            foreach (var entity in entities)
             {
                 ValidationTool.FluentValidate(validator, entity);
             }

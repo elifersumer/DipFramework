@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DipFramework.DataAccess.Tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DipFramework.Business", "DipFramework.Business\DipFramework.Business.csproj", "{4DE843AB-1971-4CE9-A333-5EA8989DCEF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DipFramework.Business.Tests", "DipFramework.Business.Tests\DipFramework.Business.Tests.csproj", "{E194637D-0E40-4FE7-B4DF-0BDAA49759A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DipFramework.Business.Tests", "DipFramework.Business.Tests\DipFramework.Business.Tests.csproj", "{E194637D-0E40-4FE7-B4DF-0BDAA49759A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,6 +2,7 @@
 using DipFramework.Business.CrossCuttingConcerns.Validation.FluentValidation;
 using DipFramework.Business.ValidationRules.FluentValidation;
 using DipFramework.Core.Aspects.PostSharp;
+using DipFramework.Core.Aspects.PostSharp.ValidationAspects;
 using DipFramework.DataAccess.EntityFramework.Abstract;
 using DipFramework.Entities.Concrete;
 using System;
