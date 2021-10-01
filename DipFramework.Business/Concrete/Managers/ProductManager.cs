@@ -3,8 +3,10 @@ using DipFramework.Business.CrossCuttingConcerns.Validation.FluentValidation;
 using DipFramework.Business.ValidationRules.FluentValidation;
 using DipFramework.Core.Aspects.PostSharp;
 using DipFramework.Core.Aspects.PostSharp.CachingAspects;
+using DipFramework.Core.Aspects.PostSharp.LoggingAspects;
 using DipFramework.Core.Aspects.PostSharp.ValidationAspects;
 using DipFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
+using DipFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using DipFramework.DataAccess.EntityFramework.Abstract;
 using DipFramework.Entities.Concrete;
 using System;
@@ -32,6 +34,8 @@ namespace DipFramework.Business.Concrete.Managers
         }
 
         [CacheAspect(typeof(MemoryCacheManager))]
+        [LogAspect(typeof(DatabaseLogger))]
+        [LogAspect(typeof(FileLogger))]
         public List<Product> GetAll()
         {
             return _productDal.GetList().ToList();
