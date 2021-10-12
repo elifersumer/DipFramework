@@ -28,6 +28,7 @@ namespace DipFramework.Business.Concrete.Managers
 
         [FluentValidationAspect(typeof(ProductValidator))]
         [CacheRemoveAspect(typeof(MemoryCacheManager))]
+        [LogAspect(typeof(FileLogger))]
         public void Add(Product product)
         {
             _productDal.Add(product);

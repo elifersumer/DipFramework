@@ -17,7 +17,6 @@ namespace DipFramework.DataAccess.EntityFramework.Concrete.Mappings
 
             builder.Property(p => p.CategoryId).HasColumnName("CategoryID");
             builder.Property(p => p.ProductName).HasColumnName("ProductName");
-            builder.Property(p => p.SupplierId).HasColumnName("SupplierID");
             builder.Property(p => p.QuantityPerUnit).HasColumnName("QuantityPerUnit");
             builder.Property(p => p.UnitPrice).HasColumnName("UnitPrice");
             builder.Property(p => p.UnitsInStock).HasColumnName("UnitsInStock");
